@@ -1,1 +1,1 @@
-# sycs-climate.github.io
+# sycs.github.io
