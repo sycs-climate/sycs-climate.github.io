@@ -69,12 +69,12 @@
     <div class="jumbotron">
       <div class="row">
         <div class="col-md-4 text-center">
-          <img class="gallery-img" src="resources/week-4.jpg" alt="Week 4" title="Week 4">
+          <img class="gallery-img fancybox" src="resources/week-4.jpg" alt="Week 4" title="Week 4">
           <b>Week 4</b>
           <br><br>
         </div>
         <div class="col-md-4 text-center">
-          <img class="gallery-img" src="resources/week-8.jpg" alt="Week 8" title="Week 8">
+          <img class="gallery-img fancybox" src="resources/week-8.jpg" alt="Week 8" title="Week 8">
           <b>Week 8</b>
           <br><br>
         </div>
@@ -97,7 +97,7 @@
           var addToAll = true;
           var gallery = true;
           var titlePosition = 'inside';
-          $(addToAll ? 'img' : 'img.fancybox').each(function(){
+          $('img.fancybox').each(function(){
               var $this = $(this);
               var title = $this.attr('title');
               var src = $this.attr('data-big') || $this.attr('src');
