@@ -34,4 +34,4 @@ function darkToggle() {
 }
 
 console.log("Hey there! What are you doing here? Having a little look at the code are we?\nVisit our github repo at https://github.com/sycs-climate/sycs-climate.github.io")
-console.log("Also Fraser from George Watson's says hi!")
+console.log("Also Fraser from George Watson's says hi!\nhttps://github.com/Fraserbc")
