@@ -17,3 +17,7 @@ body {
 .jumbotron .btn {
     background-color: rgb(24, 61, 74, 0.8) !important;
 }
+
+.list-group li {
+    background-color: rgb(33, 35, 40) !important;
+}
