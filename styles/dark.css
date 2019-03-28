@@ -19,6 +19,14 @@ body {
     color: rgb(255, 255, 255, 0.8) !important;
 }
 
+.col-md-12 {
+    color: rgb(255, 255, 255, 0.8) !important;
+}
+
 .jumbotron .btn {
     background-color: rgb(24, 61, 74, 0.8) !important;
+}
+
+.list-group li {
+    background-color: rgb(33, 35, 40) !important;
 }

@@ -4,7 +4,7 @@ expires = expires.toUTCString();
 
 state = document.cookie.split("theme=")
 if(state[1] == undefined){
-    document.cookie = "theme=0; expires="+expires
+    document.cookie = "theme=0; expires=" + expires + "; path=/"
     state = 0
 } else {
     state = parseInt(state[1])
@@ -30,7 +30,7 @@ function darkToggle() {
     stylesheet.toggle();
     darkToggleButton.toggle();
     state = state ? 0 : 1;
-    document.cookie = "theme=" + state + ";expires=" + expires
+    document.cookie = "theme=" + state + ";expires=" + expires + "; path=/"
 }
 
 console.log("Hey there! What are you doing here? Having a little look at the code are we?\nVisit our github repo at https://github.com/sycs-climate/sycs-climate.github.io")
