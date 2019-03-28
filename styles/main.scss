@@ -41,3 +41,16 @@ h1, h2, h3, h4, h5, h6, b, strong, .bold {
 .social-icon {
   height: 32px;
 }
+
+.list-group li {
+    background-color: rgb(33, 35, 40) !important;
+}
+
+.navbar {
+  background-color: rgb(20, 54, 67) !important;
+  border: 0px !important;
+}
+
+.navbar .active a {
+  background-color:  rgb(6,32,47) !important;
+}
