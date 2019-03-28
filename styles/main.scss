@@ -1,4 +1,4 @@
-$primaryColor: rgb(22, 54, 68);
+$primaryColor: rgb(20,54,67);
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6, b, strong, .bold {
 }
 
 .navbar {
-  background-color: rgb(20,54,67) !important;
+  background-color: $primaryColor !important;
   border: 0px !important;
 }
 
