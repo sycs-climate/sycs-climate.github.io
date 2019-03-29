@@ -2,15 +2,6 @@ body {
     background-color: rgb(23, 24, 28) !important;
 }
 
-.navbar {
-    background-color: rgb(20, 54, 67) !important;
-    border: 0px !important;
-}
-
-.navbar .active a {
-    background-color:  rgb(6,32,47) !important;
-}
-
 .jumbotron {
     background-color: rgb(27, 29, 34) !important;
 }
