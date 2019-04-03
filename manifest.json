@@ -1,0 +1,31 @@
+{
+  "short_name": "SYCS",
+  "name": "Scottish Youth Climate Strike",
+  "icons": [
+    {
+      "src": "/favicon/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/favicon/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/favicon/favicon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    }
+    {
+      "src": "/favicon/android-icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "rgb(22, 54, 68)",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "rgb(22, 54, 68)"
+}
