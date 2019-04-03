@@ -50,19 +50,6 @@
   })});
   </script>
 
-  <!-- Google Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js"></script>
-  <script>
-    var config = {
-      apiKey: "AIzaSyCb8j3AMIQPqrJnutqgodydTZl9yPRdFDM",
-      authDomain: "sycs-climate.firebaseapp.com",
-      projectId: "sycs-climate",
-      messagingSenderId: "761370184415",
-    };
-    firebase.initializeApp(config);
-  </script>
-
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61674279-6"></script>
   <script>
@@ -111,6 +98,18 @@
     </div>
   </nav>
 
+  <div id="askdialog" class="text-center hidden">
+    <p class="message"></p>
+    <div class="row">
+      <div class="col-md-6 button-container text-center">
+        <div class="yes button">Yes</div>
+      </div>
+      <div class="col-md-6 button-container text-center">
+        <div class="no button">No</div>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
     <div class="jumbotron">
       <h1>Guidelines and Rules for Striking</h1>
@@ -150,6 +149,20 @@
     </div>
   </div>
 
+  <!-- Google Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCb8j3AMIQPqrJnutqgodydTZl9yPRdFDM",
+      authDomain: "sycs-climate.firebaseapp.com",
+      databaseURL: "https://sycs-climate.firebaseio.com",
+      projectId: "sycs-climate",
+      storageBucket: "sycs-climate.appspot.com",
+      messagingSenderId: "761370184415"
+    };
+    firebase.initializeApp(config);
+  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="../scripts/main.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
