@@ -1,6 +1,6 @@
 // Set up Firebase Cloud Messaging
-var messaging = firebase.messaging();
-messaging.usePublicVapidKey("BP8pKpFj6ppwFdAh4oQqs1YYDNI49RuCmA0yK7J_Kn2r2yCQcyp_7iQr4fhCO84A25g1aQR_hdV_3tPP39qzGA4");
+// var messaging = firebase.messaging();
+// messaging.usePublicVapidKey("BP8pKpFj6ppwFdAh4oQqs1YYDNI49RuCmA0yK7J_Kn2r2yCQcyp_7iQr4fhCO84A25g1aQR_hdV_3tPP39qzGA4");
 
 function Cookie() {
   // https://www.w3schools.com/js/js_cookies.asp
@@ -33,66 +33,66 @@ function Cookie() {
 var cookie = new Cookie();
 
 
-function AskDialog(selector) {
-  this.ask = function(message, yesFunction, noFunction) {
-    $(selector + ' .message').html(message);
-    $(selector + ' .yes.button').attr('onclick', yesFunction);
-    $(selector + ' .no.button').attr('onclick', noFunction);
-    $(selector).removeClass('hidden');
-  }
-  this.close = function() {
-    $(selector + ' .message').html('');
-    $(selector).addClass('hidden');
-  }
-}
-var ask = new AskDialog('#askdialog');
-
-function requestNotifPermission(permission) {
-  ask.close();
-  if (permission) {
-    cookie.set('notifications', 'yes', 150);
-    requestNotif();
-  } else {
-    cookie.set('notifications', 'no', 150);
-  }
-}
-function requestNotif() {
-  if (cookie.get('notifications') == 'yes') {
-    messaging.requestPermission().then(function() {
-      getNotifToken();
-    }).catch(function(err) {
-      ask.ask('An error occurred while trying to enable push notifications. Would you like to try again?', 'requestNotif()', '');
-      console.log(err);
-    });
-  }
-}
-
-function askNotif() {
-  ask.ask('Would you like to receive push notifications with important news about upcoming strikes?', 'requestNotifPermission(true)', 'requestNotifPermission(false)');
-}
-
-function getNotifToken() {
-  messaging.getToken().then(function(currentToken) {
-    if (currentToken) {
-      sendNotifTokenToServer(currentToken);
-      notifSuccess();
-    } else {
-      askNotif();
-    }
-  }).catch(function(err) {
-    ask.ask('An error occurred with push notifications. Would you like to retry setup?', 'requestNotif()', '');
-  });
-}
-
-function notifSuccess() {
-  messaging.onTokenRefresh(function() {
-    notif.getToken();
-  });
-}
-
-function sendNotifTokenToServer(token) {
-  console.log(token);
-}
+// function AskDialog(selector) {
+//   this.ask = function(message, yesFunction, noFunction) {
+//     $(selector + ' .message').html(message);
+//     $(selector + ' .yes.button').attr('onclick', yesFunction);
+//     $(selector + ' .no.button').attr('onclick', noFunction);
+//     $(selector).removeClass('hidden');
+//   }
+//   this.close = function() {
+//     $(selector + ' .message').html('');
+//     $(selector).addClass('hidden');
+//   }
+// }
+// var ask = new AskDialog('#askdialog');
+//
+// function requestNotifPermission(permission) {
+//   ask.close();
+//   if (permission) {
+//     cookie.set('notifications', 'yes', 150);
+//     requestNotif();
+//   } else {
+//     cookie.set('notifications', 'no', 150);
+//   }
+// }
+// function requestNotif() {
+//   if (cookie.get('notifications') == 'yes') {
+//     messaging.requestPermission().then(function() {
+//       getNotifToken();
+//     }).catch(function(err) {
+//       ask.ask('An error occurred while trying to enable push notifications. Would you like to try again?', 'requestNotif()', '');
+//       console.log(err);
+//     });
+//   }
+// }
+//
+// function askNotif() {
+//   ask.ask('Would you like to receive push notifications with important news about upcoming strikes?', 'requestNotifPermission(true)', 'requestNotifPermission(false)');
+// }
+//
+// function getNotifToken() {
+//   messaging.getToken().then(function(currentToken) {
+//     if (currentToken) {
+//       sendNotifTokenToServer(currentToken);
+//       notifSuccess();
+//     } else {
+//       askNotif();
+//     }
+//   }).catch(function(err) {
+//     ask.ask('An error occurred with push notifications. Would you like to retry setup?', 'requestNotif()', '');
+//   });
+// }
+//
+// function notifSuccess() {
+//   messaging.onTokenRefresh(function() {
+//     notif.getToken();
+//   });
+// }
+//
+// function sendNotifTokenToServer(token) {
+//   console.log(token);
+// }
 
 // $(document).ready(function() {
 //   if (cookie.get('notifications') == '') {
