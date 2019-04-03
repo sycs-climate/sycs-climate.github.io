@@ -94,11 +94,11 @@ function sendNotifTokenToServer(token) {
   console.log(token);
 }
 
-// $(document).ready(function() {
-//   if (cookie.get('notifications') == '') {
-//     askNotif();
-//   }
-//   if (cookie.get('notifications') == 'yes') {
-//     getNotifToken();
-//   }
-// });
+$(document).ready(function() {
+  if (cookie.get('notifications') == '') {
+    askNotif();
+  }
+  if (cookie.get('notifications') == 'yes') {
+    getNotifToken();
+  }
+});
