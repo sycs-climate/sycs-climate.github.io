@@ -65,3 +65,34 @@ h1, h2, h3, h4, h5, h6, b, strong, .bold {
 .navbar .active a {
   background-color:  rgb(6,32,47) !important;
 }
+
+#askdialog {
+  padding: 15px;
+  background-color: $primaryColor;
+  width: 250px;
+  border-radius: 12px;
+  color: white;
+  position: absolute;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -125px;
+
+  .button-container {
+    .button {
+      border: 1px solid white;
+      border-radius: 5px;
+      width: 80%;
+      margin: auto;
+      padding: 8px;
+      margin-top: 5px;
+      cursor: pointer;
+    }
+
+
+    .button:hover {
+      color: $primaryColor;
+      background-color: white;
+    }
+  }
+}
