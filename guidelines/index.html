@@ -30,6 +30,26 @@
   <link rel="canonical" href="https://www.sycs.org.uk/guidelines" />
   <link rel="manifest" href="../manifest.json">
 
+  <!-- Cookie Consent -->
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script>
+  window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#163644",
+        "text": "#ffffff"
+      },
+      "button": {
+        "background": "#ffffff",
+        "text": "#163644"
+      }
+    },
+    "position": "bottom-right"
+  })});
+  </script>
+
   <!-- Google Firebase -->
   <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js"></script>
