@@ -30,6 +30,19 @@
   <link rel="canonical" href="https://www.sycs.org.uk/contact" />
   <link rel="manifest" href="../manifest.json">
 
+  <!-- Google Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js"></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyCb8j3AMIQPqrJnutqgodydTZl9yPRdFDM",
+      authDomain: "sycs-climate.firebaseapp.com",
+      projectId: "sycs-climate",
+      messagingSenderId: "761370184415",
+    };
+    firebase.initializeApp(config);
+  </script>
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61674279-6"></script>
   <script>
