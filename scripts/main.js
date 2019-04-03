@@ -1,4 +1,4 @@
-// // // Set up Firebase Cloud Messaging
+// Set up Firebase Cloud Messaging
 var messaging = firebase.messaging();
 messaging.usePublicVapidKey("BP8pKpFj6ppwFdAh4oQqs1YYDNI49RuCmA0yK7J_Kn2r2yCQcyp_7iQr4fhCO84A25g1aQR_hdV_3tPP39qzGA4");
 
@@ -94,11 +94,11 @@ function sendNotifTokenToServer(token) {
   console.log(token);
 }
 
-$(document).ready(function() {
-  if (cookie.get('notifications') == '') {
-    askNotif();
-  }
-  if (cookie.get('notifications') == 'yes') {
-    getNotifToken();
-  }
-});
+// $(document).ready(function() {
+//   if (cookie.get('notifications') == '') {
+//     askNotif();
+//   }
+//   if (cookie.get('notifications') == 'yes') {
+//     getNotifToken();
+//   }
+// });
