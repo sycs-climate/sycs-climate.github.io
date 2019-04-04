@@ -34,14 +34,26 @@ var cookie = new Cookie();
 
 
 function AskDialog(selector) {
-  this.ask = function(message, yesFunction, noFunction) {
+  this.confirm = function(title, message, yesFunction, noFunction) {
+    $(selector + ' .title').html(title);
     $(selector + ' .message').html(message);
     $(selector + ' .yes.button').attr('onclick', yesFunction);
     $(selector + ' .no.button').attr('onclick', noFunction);
+    $(selector + ' .confirm').removeClass('hidden');
+    $(selector).removeClass('hidden');
+  }
+  this.alert = function(title, message, okayFunction) {
+    $(selector + ' .title').html(title);
+    $(selector + ' .message').html(message);
+    $(selector + ' .okay.button').attr('onclick', okayFunction);
+    $(selector + ' .alert').removeClass('hidden');
     $(selector).removeClass('hidden');
   }
   this.close = function() {
+    $(selector + ' .title').html('');
     $(selector + ' .message').html('');
+    $(selector + ' .confirm').addClass('hidden');
+    $(selector + ' .alert').addClass('hidden');
     $(selector).addClass('hidden');
   }
 }
@@ -57,18 +69,19 @@ function requestNotifPermission(permission) {
   }
 }
 function requestNotif() {
+  ask.close();
   if (cookie.get('notifications') == 'yes') {
     messaging.requestPermission().then(function() {
       getNotifToken();
     }).catch(function(err) {
-      ask.ask('An error occurred while trying to enable push notifications. Would you like to try again?', 'requestNotif()', 'ask.close()');
+      ask.confirm('Error: Push Notifications', 'An error occurred while trying to enable push notifications. Would you like to try again?', 'requestNotif()', 'ask.close()');
       console.log(err);
     });
   }
 }
 
 function askNotif() {
-  ask.ask('Would you like to receive push notifications with important news about upcoming strikes?', 'requestNotifPermission(true)', 'requestNotifPermission(false)');
+  ask.confirm('Push Notifications', 'Would you like to receive push notifications with important news about upcoming strikes?', 'requestNotifPermission(true)', 'requestNotifPermission(false)');
 }
 
 function getNotifToken() {
@@ -80,7 +93,7 @@ function getNotifToken() {
       askNotif();
     }
   }).catch(function(err) {
-    ask.ask('An error occurred with push notifications. Would you like to retry setup?', 'requestNotif()', 'ask.close()');
+    ask.confirm('Error: Push Notifications', 'An error occurred with push notifications. Would you like to retry setup?', 'requestNotif()', 'ask.close()');
   });
 }
 
@@ -96,11 +109,11 @@ function sendNotifTokenToServer(token) {
 
 console.log("Hey there! What are you doing here? Having a little look at the code are we?\nVisit our github repo at https://github.com/sycs-climate/sycs-climate.github.io")
 
-// $(document).ready(function() {
-//   if (cookie.get('notifications') == '') {
-//     askNotif();
-//   }
-//   if (cookie.get('notifications') == 'yes') {
-//     getNotifToken();
-//   }
-// });
+$(document).ready(function() {
+  // if (cookie.get('notifications') == '') {
+  //   askNotif();
+  // }
+  // if (cookie.get('notifications') == 'yes') {
+  //   getNotifToken();
+  // }
+});
