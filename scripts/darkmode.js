@@ -1,8 +1,6 @@
-var state = parseInt(cookie.get('theme'));
+var themeState = parseInt(cookie.get('theme'));
 
-if (!state) {
-  state = 0;
-} else {
+if (themeState) {
   setTheme(1);
 }
 
