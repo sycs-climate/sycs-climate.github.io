@@ -1,7 +1,3 @@
-// Set up Firebase Cloud Messaging
-var messaging = firebase.messaging();
-messaging.usePublicVapidKey("BP8pKpFj6ppwFdAh4oQqs1YYDNI49RuCmA0yK7J_Kn2r2yCQcyp_7iQr4fhCO84A25g1aQR_hdV_3tPP39qzGA4");
-
 function Cookie() {
   // https://www.w3schools.com/js/js_cookies.asp
   this.set = function(cname, cvalue, exdays) {
@@ -37,15 +33,24 @@ function AskDialog(selector) {
   this.confirm = function(title, message, yesFunction, noFunction) {
     $(selector + ' .title').html(title);
     $(selector + ' .message').html(message);
-    $(selector + ' .yes.button').attr('onclick', yesFunction);
-    $(selector + ' .no.button').attr('onclick', noFunction);
+    $(selector + ' .yes.button').on('click', function() {
+      ask.close();
+      yesFunction();
+    });
+    $(selector + ' .no.button').on('click', function() {
+      ask.close();
+      noFunction();
+    });
     $(selector + ' .confirm').removeClass('hidden');
     $(selector).removeClass('hidden');
   }
   this.alert = function(title, message, okayFunction) {
     $(selector + ' .title').html(title);
     $(selector + ' .message').html(message);
-    $(selector + ' .okay.button').attr('onclick', okayFunction);
+    $(selector + ' .okay.button').on('click', function() {
+      ask.close();
+      okayFunction();
+    });
     $(selector + ' .alert').removeClass('hidden');
     $(selector).removeClass('hidden');
   }
@@ -54,13 +59,17 @@ function AskDialog(selector) {
     $(selector + ' .message').html('');
     $(selector + ' .confirm').addClass('hidden');
     $(selector + ' .alert').addClass('hidden');
+    $(selector + ' .button').off('click');
     $(selector).addClass('hidden');
   }
 }
 var ask = new AskDialog('#askdialog');
 
+// Set up Firebase Cloud Messaging
+var messaging = firebase.messaging();
+messaging.usePublicVapidKey("BP8pKpFj6ppwFdAh4oQqs1YYDNI49RuCmA0yK7J_Kn2r2yCQcyp_7iQr4fhCO84A25g1aQR_hdV_3tPP39qzGA4");
+
 function requestNotifPermission(permission) {
-  ask.close();
   if (permission) {
     cookie.set('notifications', 'yes', 150);
     requestNotif();
@@ -69,19 +78,18 @@ function requestNotifPermission(permission) {
   }
 }
 function requestNotif() {
-  ask.close();
   if (cookie.get('notifications') == 'yes') {
     messaging.requestPermission().then(function() {
       getNotifToken();
     }).catch(function(err) {
-      ask.confirm('Error: Push Notifications', 'An error occurred while trying to enable push notifications. Would you like to try again?', 'requestNotif()', 'ask.close()');
+      ask.confirm('Error: Push Notifications', 'An error occurred while trying to enable push notifications. Would you like to try again?', function() {requestNotif();}, function() {});
       console.log(err);
     });
   }
 }
 
 function askNotif() {
-  ask.confirm('Push Notifications', 'Would you like to receive push notifications with important news about upcoming strikes?', 'requestNotifPermission(true)', 'requestNotifPermission(false)');
+  ask.confirm('Push Notifications', 'Would you like to receive push notifications with important news about upcoming strikes?', function() {requestNotifPermission(true);}, function() {requestNotifPermission(false);});
 }
 
 function getNotifToken() {
@@ -93,7 +101,7 @@ function getNotifToken() {
       askNotif();
     }
   }).catch(function(err) {
-    ask.confirm('Error: Push Notifications', 'An error occurred with push notifications. Would you like to retry setup?', 'requestNotif()', 'ask.close()');
+    ask.confirm('Error: Push Notifications', 'An error occurred while trying to enable push notifications. Would you like to try again?', function() {requestNotif();}, function() {});
   });
 }
 
@@ -104,16 +112,28 @@ function notifSuccess() {
 }
 
 function sendNotifTokenToServer(token) {
-  console.log(token);
+  $.post('https://sbneelu.io/sycs-fcm-add-to-topic.php', {token: token, topic: 'sycs-general'}, function(data) {
+    if (data.trim() != '200 OK') {
+      ask.confirm('Error: Push Notifications', 'An error occurred while trying to enable push notifications. Would you like to try again?', function() {requestNotif();}, function() {});
+    }
+  })
 }
 
-console.log("Hey there! What are you doing here? Having a little look at the code are we?\nVisit our github repo at https://github.com/sycs-climate/sycs-climate.github.io")
-
 $(document).ready(function() {
+
+  console.log("Hey there! What are you doing here? Having a little look at the code are we?\nVisit our github repo at https://github.com/sycs-climate/sycs-climate.github.io")
+
   // if (cookie.get('notifications') == '') {
   //   askNotif();
   // }
+  //
   // if (cookie.get('notifications') == 'yes') {
   //   getNotifToken();
   // }
+  //
+  // messaging.onMessage(function(payload) {
+  //   var title = payload['notification']['title'];
+  //   var body = payload['notification']['body'];
+  //   ask.alert(title, body, function() {});
+  // });
 });

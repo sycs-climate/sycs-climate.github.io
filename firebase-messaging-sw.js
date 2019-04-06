@@ -16,13 +16,13 @@
 //
 //
 // messaging.setBackgroundMessageHandler(function(payload) {
-//   // Customize notification here
-//   // var notificationTitle = 'Background Message Title';
+//   var notificationTitle = payload['notification']['title'];
 //   var notificationOptions = {
-//     // body: 'Background Message body.',
-//     icon: "https://www.sycs.org.uk/assets/sycs-logo.jpeg"
+//     "body": payload['notification']['body'],
+//     "badge": "/assets/sycs-logo-full.jpeg",
+//     "icon": "/assets/sycs-logo-full.jpeg"
 //   };
 //
-//   return self.registration.showNotification('',
+//   return self.registration.showNotification(notificationTitle,
 //     notificationOptions);
 // });
