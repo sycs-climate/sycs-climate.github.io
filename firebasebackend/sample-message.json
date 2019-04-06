@@ -1,0 +1,13 @@
+{
+  "function": "message",
+  "target": {
+    "type": "topic",
+    "topic": "sycs-general"
+  },
+  "notification": {
+    "title": "Sample Title",
+    "body": "Sample Body",
+    "url": "https://www.sycs.org.uk/"
+  },
+  "urgency": 2
+}
