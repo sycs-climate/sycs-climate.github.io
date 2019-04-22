@@ -1,4 +1,5 @@
-$primaryColor: rgb(20,54,67);
+$primaryColor: #154854;
+$darkColor: rgb(20,54,67);
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -63,7 +64,7 @@ h1, h2, h3, h4, h5, h6, b, strong, .bold {
 }
 
 .navbar .active a {
-  background-color:  rgb(6,32,47) !important;
+  background-color:  $darkColor !important;
 }
 
 .text-black {
