@@ -1,8 +1,9 @@
 $primaryColor: #154854;
 $darkColor: rgb(20,54,67);
 
-body {
+html, body {
   font-family: 'Open Sans', sans-serif;
+  height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6, b, strong, .bold {
