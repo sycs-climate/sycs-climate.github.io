@@ -4,17 +4,165 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>SYCS WhatsApp</title>
+  <meta name="msapplication-TileColor" content="#154854">
+  <meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#154854">
+  <title>SYCS | WhatsApp</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Open+Sans:400,600">
+  <link rel="stylesheet" href="../styles/nav.min.css">
+  <link rel="stylesheet" href="../styles/main.min.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../favicon/manifest.json">
+  <link rel="canonical" href="https://www.sycs.org.uk/demands" />
+  <link rel="manifest" href="../manifest.json">
+
+  <!-- Cookie Consent -->
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script>
+  window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#154854",
+        "text": "#ffffff"
+      },
+      "button": {
+        "background": "#ffffff",
+        "text": "#154854"
+      }
+    },
+    "position": "bottom-right"
+  })});
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61674279-6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-61674279-6');
-    location.href = 'https://chat.whatsapp.com/LeG2vR537vmKFF2jfA8Ium';
   </script>
+  <!-- HTML5 shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 <body>
-  Redirecting... Please <a href="https://chat.whatsapp.com/LeG2vR537vmKFF2jfA8Ium">click here</a> if your browser does not redirect you automatically.
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="text-white">Menu</span>
+        </button>
+        <a class="navbar-brand" href="../">
+          <img alt="SYCS" src="../assets/sycs-logo.jpeg">
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="nav navbar-nav">
+          <li><a href="../">Home</a></li>
+          <li><a href="../about/">About</a></li>
+          <li><a href="../strike-locations/">Strike Locations</a></li>
+          <li><a href="../demands/">Demands</a></li>
+          <li><a href="../guidelines/">Guidelines</a></li>
+          <li><a href="../contact/">Contact</a></li>
+          <li><a href="../join-us/">Join Us</a></li>
+          <li><a href="../register-strike/">Register a Strike</a></li>
+          <li><a href="../gallery/">Gallery</a></li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <a class="darkToggle btn btn-prim" href="#" onclick="setTheme(1);">Dark Mode</a>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div id="askdialog" class="text-center hidden">
+    <p><b class="title"></b></p>
+    <br>
+    <p class="message"></p>
+    <div class="row confirm hidden">
+      <div class="col-md-6 button-container text-center">
+        <div class="yes button">Yes</div>
+      </div>
+      <div class="col-md-6 button-container text-center">
+        <div class="no button">No</div>
+      </div>
+    </div>
+    <div class="row alert hidden">
+      <div class="col-md-12 button-container text-center">
+        <div class="okay button">Okay</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h2>SYCS WhatsApp Group Chats</h2>
+      <p>Please use the links below to join WhatsApp group chats relevant to you. Only join regional group chats for regions where you attend strikes.</p>
+      <h3>National</h3>
+      <p>
+        <b>SYCS Melting Pot</b><br>
+        <i>(A general national coordination group chat)</i><br>
+        <a href="https://chat.whatsapp.com/LeG2vR537vmKFF2jfA8Ium">https://chat.whatsapp.com/LeG2vR537vmKFF2jfA8Ium</a>
+      </p>
+      <p>
+        <b>SYCS National Alerts</b><br>
+        <i>(A chat for important alerts and announcements - please make sure you join this chat. Only admins can send messages to this chat so don't worry about spam.)</i><br>
+        <a href="https://chat.whatsapp.com/H2v7sv1txTuBajozWt0I9h">https://chat.whatsapp.com/H2v7sv1txTuBajozWt0I9h</a>
+      </p>
+      <p>
+        <b>SYCS Spam</b><br>
+        <i>(A chat designated for spam and long debates to avoid excessive message spam in the main chats)</i><br>
+        <a href="https://chat.whatsapp.com/IN3Z6djfuqWKitNkSN0tad">https://chat.whatsapp.com/IN3Z6djfuqWKitNkSN0tad</a>
+      </p>
+      <hr>
+      <h3>Edinburgh</h3>
+      <p>
+        <b>Edinburgh Strike Team</b><br>
+        <i>(A general Edinburgh coordination group chat)</i><br>
+        <a href="https://chat.whatsapp.com/LwhsrvCdZKOCvPsxoEBfl5">https://chat.whatsapp.com/LwhsrvCdZKOCvPsxoEBfl5</a>
+      </p>
+      <p>
+        <b>Edinburgh Alerts</b><br>
+        <i>(A chat for important alerts and announcements - please make sure you join this chat. Only admins can send messages to this chat so don't worry about spam.)</i><br>
+        <a href="https://chat.whatsapp.com/B5cpLvoYtfw65Dgni4t2D8">https://chat.whatsapp.com/B5cpLvoYtfw65Dgni4t2D8</a>
+      </p>
+      <hr>
+      <h3>Glasgow</h3>
+      <p>
+        <b>Glasgow Youth Strike Team</b><br>
+        <i>(A general Glasgow coordination group chat)</i><br>
+        <a href="https://chat.whatsapp.com/FFvizECJoNf7C7bvGscBDc">https://chat.whatsapp.com/FFvizECJoNf7C7bvGscBDc</a>
+      </p>
+    </div>
+  </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="../scripts/darkmode.js"></script>
 </body>
 </html>
